@@ -1,0 +1,3 @@
+step1. pull down this repo
+step2. change to your aim directory, such "cd array"
+step3. chmod 777 run.sh && ./run.sh
