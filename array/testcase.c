@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "findMaxConsecutiveOnes.c"
+#include "findNumsWithEvenDigits.c"
 
 #define TEST_CASE(case_name) \
     void TEST_CASE_##case_name() \
@@ -31,9 +32,17 @@ TEST_CASE(findmax)
 }
 TEST_CASE_END
 
+TEST_CASE(findNumbers)
+{
+    int nums[] = {555,901,482,1771};
+    int ret = findNumbers(nums, sizeof(nums) / sizeof(int));
+    EXPECT(ret == 1);
+}
+TEST_CASE_END
 
 int main(int argc, char *argv[])
 {
     TEST_CASE_findmax();
+    TEST_CASE_findNumbers();
     return 0;        
 }
