@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "findMaxConsecutiveOnes.c"
 #include "findNumsWithEvenDigits.c"
+#include "duplicateZeros.c"
 
 #define TEST_CASE(case_name) \
     void TEST_CASE_##case_name() \
@@ -40,9 +41,21 @@ TEST_CASE(findNumbers)
 }
 TEST_CASE_END
 
+TEST_CASE(duplicateZeros)
+{
+    int arr[] = {1,2,0,4,0,6,0,8,9};
+    duplicateZeros(arr, sizeof(arr) / sizeof(int));
+    for (int i = 0; i < sizeof(arr) / sizeof(int); i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+TEST_CASE_END
+
 int main(int argc, char *argv[])
 {
     TEST_CASE_findmax();
     TEST_CASE_findNumbers();
+    TEST_CASE_duplicateZeros();
     return 0;        
 }
